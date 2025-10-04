@@ -1,0 +1,65 @@
+/* Quitar espacios del navegador */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #f7f9fb;
+}
+
+/* Barra azul superior */
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 65px;
+  background-color: #0d6efd;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 20px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Contenedor centrado */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding-top: 70px; /* espacio para la barra */
+}
+
+/* Tarjeta del formulario */
+.login-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 25px 35px;
+  width: 360px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+label {
+  font-weight: 500;
+}
+
+input.form-control {
+  margin-bottom: 10px;
+}
+
+button.btn-primary {
+  background-color: #0d6efd;
+  border: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+button.btn-primary:hover {
+  background-color: #0b5ed7;
+}
+
+.invalid-feedback {
+  font-size: 0.85rem;
+}

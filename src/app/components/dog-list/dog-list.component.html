@@ -1,0 +1,11 @@
+<div class="d-flex flex-column gap-2">
+  @for (d of dogs; track d.id) {
+    <div class="d-flex align-items-center gap-2 p-2 border rounded shadow-sm
+               " [class.bg-light]="selectedId === d.id"
+         role="button" (click)="select(d)">
+      <img [ngSrc]="d.image" width="28" height="28" class="rounded-circle object-fit-cover" alt="{{d.name}}">
+      <span class="fw-semibold text-primary">{{ d.name }}</span>
+      <span class="ms-auto">🐾</span>
+    </div>
+  }
+</div>

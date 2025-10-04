@@ -1,0 +1,9 @@
+<div class="card shadow-sm">
+  <div class="card-body text-center">
+    <h5 class="card-title mb-2">{{ dog.name }}</h5>
+    <img [ngSrc]="dog.image" width="96" height="96" class="rounded-circle object-fit-cover mb-2" alt="{{dog.name}}">
+    <div class="fw-bold">Lifespan</div>
+    <div class="mb-2">Between {{dog.lifespan.min}} - {{dog.lifespan.max}} years</div>
+    <p class="card-text m-0">{{ dog.description }}</p>
+  </div>
+</div>

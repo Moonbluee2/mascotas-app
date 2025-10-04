@@ -1,0 +1,50 @@
+<!-- Blue Top Bar -->
+<div class="top-bar">
+  <span>Hello: {{ username() || 'user' }}</span>
+  <button class="logout-btn" (click)="logout()">Logout</button>
+</div>
+
+<!-- Main Container below the blue bar -->
+<div class="main-container container-fluid">
+  <div class="row g-4 justify-content-center">
+    
+    <!-- Left Column: Dog List -->
+    <div class="col-12 col-lg-4 d-flex flex-column gap-2">
+      @for (d of dogs; track d.id) 
+      {
+        <div
+          class="d-flex align-items-center justify-content-between px-3 py-2 border border-primary rounded bg-white shadow-sm"
+          role="button"
+          (click)="onPick(d)"
+        >
+          <span class="text-primary fw-semibold">{{ d.name }}</span>
+          <img
+            [src]="d.image"
+            width="40"
+            height="40"
+            class="rounded-circle border object-fit-cover"
+            alt="{{ d.name }}"
+          />
+        </div>
+      }
+    </div>
+
+    <!-- Right Column: Dog Details -->
+    <div class="col-12 col-lg-7" *ngIf="selected() as dog">
+        <div class="card shadow-sm">
+            <h5>{{ dog.name }}</h5>
+            
+            <div class="info-section">
+            <img [src]="dog.image" alt="{{ dog.name }}">
+            <div class="lifespan">
+                <div class="label">Lifespan</div>
+                <div class="years">Between {{ dog.lifespan.min }} and {{ dog.lifespan.max }} years</div>
+            </div>
+            </div>
+
+            <p>{{ dog.description }}</p>
+        </div>
+    </div>
+
+  </div>
+</div>
